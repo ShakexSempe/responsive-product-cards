@@ -184,7 +184,7 @@ displayWork = (workItems) => {
     let work = workItems.map(item => {
         return `<div class="card">
         <div class="imgBx">
-            <img src=${item.img} style="width: 200px;" alt="cake">
+            <img src=${item.img} alt="cake">
         </div>
         <div class="content">
             <div class="productName">
@@ -192,13 +192,6 @@ displayWork = (workItems) => {
             </div>
             <div class="price-rating">
                 <h2>R${item.price}</h2>
-                <div class="rating">
-                    <i class="fa fa-star" aria-hidden="true"></i>
-                    <i class="fa fa-star" aria-hidden="true"></i>
-                    <i class="fa fa-star" aria-hidden="true"></i>
-                    <i class="fa fa-star" aria-hidden="true"></i>
-                    <i class="fa fa-star" aria-hidden="true"></i>
-                </div>
             </div>
         </div>
     </div>`

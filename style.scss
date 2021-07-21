@@ -1,2 +1,57 @@
-
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;700;900&display=swap');
 @import 'variables';
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: $background-color-lt;
+
+    .container {
+        position: relative;
+        width: 1200px;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+        padding: 20px;
+        .card {
+            width: 100%;
+            background: $background-card;
+            cursor: pointer;
+
+            .imgBx {
+                position: relative;
+                width: 100%;
+                height: 310px;
+                overflow: hidden;
+
+                img {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    transition: .5s ease-in-out;
+                    transform-origin: right;
+                }
+            }
+            
+            &:hover {
+                .imgBx {
+                    img {
+                        transform: scale(1.3);
+                    }
+                }
+            }
+        }
+    }
+}
+
