@@ -185,6 +185,20 @@ displayWork = (workItems) => {
         return `<div class="card">
         <div class="imgBx">
             <img src=${item.img} alt="cake">
+            <ul class="action">
+                <li>
+                    <i class="fa fa-heart" aria-hidden="true"></i>
+                    <span>Add to Wishlist</span>
+                </li>
+                <li>
+                <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                <span>Add to Cart</span>
+                </li>
+                <li>
+                <i class="fa fa-eye" aria-hidden="true"></i>
+                <span>View Details</span>
+                </li>
+            </ul>
         </div>
         <div class="content">
             <div class="productName">
