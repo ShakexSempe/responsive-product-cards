@@ -22,12 +22,34 @@ body {
       width: 100%;
       background: #fff;
       cursor: pointer;
-      border-radius: 10px; }
+      border-radius: 10px;
+      overflow: hidden;
+      position: relative; }
+      body .container .card::before {
+        position: absolute;
+        content: '';
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        box-shadow: inset 3px 3px 5px #ddda, inset -3px -3px 5px #000a;
+        z-index: 3; }
       body .container .card .imgBx {
         position: relative;
         width: 100%;
         height: 310px;
         overflow: hidden; }
+        body .container .card .imgBx::before {
+          position: absolute;
+          content: '';
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background: linear-gradient(90deg, transparent, rgba(163, 59, 76, 0.514));
+          z-index: 1;
+          opacity: 0;
+          transition: .5s; }
         body .container .card .imgBx img {
           position: absolute;
           top: 0;
@@ -40,7 +62,8 @@ body {
         body .container .card .imgBx .action {
           position: absolute;
           top: 10px;
-          right: 10px; }
+          right: 10px;
+          z-index: 5; }
           body .container .card .imgBx .action li {
             position: relative;
             list-style: none;
@@ -51,9 +74,20 @@ body {
             justify-content: center;
             align-items: center;
             margin: 4px;
+            padding: 2px;
+            border-radius: 50%;
             cursor: pointer;
             transform: translateX(60px);
             transition: transform .5s; }
+            body .container .card .imgBx .action li::after {
+              content: '';
+              position: absolute;
+              top: 0;
+              right: 0;
+              width: 100%;
+              height: 100%;
+              border-radius: 50%;
+              box-shadow: inset 3px 3px 5px #ddda, inset -3px -3px 5px #000a; }
             body .container .card .imgBx .action li span {
               position: absolute;
               right: 50px;
@@ -63,6 +97,7 @@ body {
               padding: 4px 6px;
               background: #fff;
               color: #333;
+              box-shadow: inset 2px 2px 5px #ddda, inset 0px -2px 5px #000a;
               font-weight: 500;
               font-size: 12px;
               border-radius: 5px;
@@ -76,7 +111,7 @@ body {
                 right: -4px;
                 width: 8px;
                 height: 8px;
-                background: #fff;
+                background: #ddd;
                 transform: translateY(-50%) rotate(45deg); }
             body .container .card .imgBx .action li:nth-child(2) {
               transition-delay: .15s; }
@@ -90,16 +125,23 @@ body {
                 opacity: 1; }
       body .container .card:hover .imgBx img {
         transform: scale(1.2); }
+      body .container .card:hover .imgBx::before {
+        opacity: 1; }
       body .container .card .content {
         padding: 10px; }
         body .container .card .content .productName h3 {
           color: #333;
-          font-weight: 500;
+          font-weight: 600;
           font-size: 18px;
-          margin: 5px 0; }
+          margin: 5px 0;
+          transition: .5s; }
         body .container .card .content .price-rating h2 {
           color: #dc143c;
           font-size: 18px;
           font-weight: 500; }
+      body .container .card:hover .productName h3 {
+        letter-spacing: .05em; }
+      body .container .card:hover .price-rating h2 {
+        font-weight: 600; }
       body .container .card:hover .action li {
         transform: translateX(0); }
